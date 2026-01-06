@@ -1,26 +1,32 @@
 {
-  "extends": "../../packages/tsconfig/base.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "target": "ES2022",
-    "lib": ["ES2022"],
-    "types": ["node"],
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "useUnknownInCatchVariables": true,
+    "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
+    "esModuleInterop": true,
+    "incremental": false,
+    "noUncheckedIndexedAccess": true,
+    "moduleDetection": "force",
+    "exactOptionalPropertyTypes": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "types": ["node"],
     "paths": {
       "@/*": ["./src/*"]
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "templates"]
+  "exclude": ["node_modules", "dist", "templates", "*.ts", "*.js"]
 }

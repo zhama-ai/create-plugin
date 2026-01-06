@@ -100,7 +100,6 @@ program
   .action(async (pluginName: string | undefined) => {
     console.log(chalk.bold.cyan('\n🚀 Tego OS Plugin Generator\n'));
 
-    let projectName: string;
     let displayNameZh = '';
     let displayNameEn = '';
     let description = '';
@@ -195,12 +194,12 @@ program
     }
 
     // 设置值
-    projectName = pluginName || response.projectName;
-    template = response.template || 'react';
-    displayNameZh = response.displayNameZh || '';
-    displayNameEn = response.displayNameEn || '';
-    description = response.description || '';
-    author = response.author || '';
+    const projectName = pluginName ?? response.projectName;
+    template = response.template ?? 'react';
+    displayNameZh = response.displayNameZh ?? '';
+    displayNameEn = response.displayNameEn ?? '';
+    description = response.description ?? '';
+    author = response.author ?? '';
 
     // 验证插件名称
     const validation = validateNpmPackageName(projectName);
