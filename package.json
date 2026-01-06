@@ -1,6 +1,6 @@
 {
   "name": "@zhama/create-plugin",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "CLI tool to create Tego OS plugins",
   "type": "module",
   "bin": {

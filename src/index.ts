@@ -49,6 +49,7 @@ async function replaceInFiles(
         '.css',
         '.md',
         '.txt',
+        '.vue',
       ];
 
       if (textExtensions.includes(ext)) {
@@ -273,9 +274,11 @@ program
       spinner.text = 'Replacing template placeholders...';
       await replaceInFiles(targetDir, /\{\{pluginId\}\}/g, projectName);
 
-      // Replace displayName placeholders
+      // Replace displayName placeholders (both formats for compatibility)
       if (displayNameZh) {
         await replaceInFiles(targetDir, /\{\{displayName\}\}/g, displayNameZh);
+        // Vue 模板使用 __DISPLAY_NAME__ 避免与 Vue 插值语法冲突
+        await replaceInFiles(targetDir, /__DISPLAY_NAME__/g, displayNameZh);
       }
 
       // Replace description placeholders

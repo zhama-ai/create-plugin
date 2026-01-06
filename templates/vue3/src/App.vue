@@ -1,12 +1,12 @@
 <script setup lang="ts">
 /**
- * {{displayName}} Plugin Main App
+ * __DISPLAY_NAME__ Plugin Main App
  */
 import { ref, onMounted } from 'vue';
 import { pluginSDK } from './main';
 
 // 插件显示名称（由 create-plugin 脚本替换）
-const displayName = 'demo plugin';
+const displayName = '__DISPLAY_NAME__';
 
 // 状态
 const workflowId = ref('');
