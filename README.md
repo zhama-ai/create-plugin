@@ -105,7 +105,7 @@ const blob = await sdk.http.download('/api/files/123');
 
 ```typescript
 // 流式调用（推荐）
-const stream = sdk.agent.callByWorkflowId({
+const stream = sdk.agent.callById({
   workflowId: 'your-workflow-id',
   params: { message: '你好' },
 });
@@ -117,7 +117,7 @@ for await (const chunk of stream) {
 }
 
 // 完整响应
-const result = await sdk.agent.collectByWorkflowId({
+const result = await sdk.agent.invoke({
   workflowId: 'your-workflow-id',
   params: { message: '你好' },
 });

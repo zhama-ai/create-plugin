@@ -129,7 +129,7 @@ export function App() {
                 <p>
                   <strong className="text-gray-900">2. Agent 调用:</strong> 使用{' '}
                   <code className="rounded bg-gray-100 px-1 py-0.5">
-                    sdk.agent.callByWorkflowId()
+                    sdk.agent.callById()
                   </code>{' '}
                   调用智能体
                 </p>

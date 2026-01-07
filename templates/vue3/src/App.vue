@@ -48,7 +48,7 @@ async function handleCallAgent() {
     const sessionId = `demo-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
 
     // 调用智能体（通过 workflowId）
-    const stream = pluginSDK.agent.callByWorkflowId({
+    const stream = pluginSDK.agent.callById({
       workflowId: workflowId.value,
       sessionId,
       params: {
@@ -224,7 +224,7 @@ async function handleCallAgent() {
             <p class="text-xs font-medium text-gray-900">💡 使用提示：</p>
             <ul class="mt-2 space-y-1 text-xs text-gray-600">
               <li>• 在 n8n 中创建工作流，获取 Workflow ID</li>
-              <li>• 使用 sdk.agent.callByWorkflowId({ workflowId, params }) 调用</li>
+              <li>• 使用 sdk.agent.callById({ workflowId, params }) 调用</li>
               <li>• SDK 会自动从 n8n 获取工作流配置，无需手动导出 JSON</li>
               <li>• 支持流式响应，通过 for await...of 处理返回的数据流</li>
               <li>• Token 自动从 localStorage 读取（与 dashboard 共用）</li>
@@ -243,7 +243,7 @@ async function handleCallAgent() {
             </p>
             <p>
               <strong class="text-gray-900">2. Agent 调用:</strong>
-              使用 <code class="rounded bg-gray-100 px-1 py-0.5">sdk.agent.callByWorkflowId()</code>
+              使用 <code class="rounded bg-gray-100 px-1 py-0.5">sdk.agent.callById()</code>
               调用智能体
             </p>
             <p>

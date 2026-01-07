@@ -32,7 +32,7 @@ export function AgentDemo() {
       const sessionId = `demo-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
 
       // 调用智能体（通过 workflowId）
-      const stream = pluginSDK.agent.callByWorkflowId({
+      const stream = pluginSDK.agent.callById({
         workflowId,
         sessionId,
         params: {
@@ -194,7 +194,7 @@ export function AgentDemo() {
           <ul className="mt-2 space-y-1 text-xs text-gray-600">
             <li>• 在 n8n 中创建工作流，获取 Workflow ID</li>
             <li>
-              • 使用 sdk.agent.callByWorkflowId({`{ workflowId, params }`}) 调用
+              • 使用 sdk.agent.callById({`{ workflowId, params }`}) 调用
             </li>
             <li>• SDK 会自动从 n8n 获取工作流配置，无需手动导出 JSON</li>
             <li>• 支持流式响应，通过 for await...of 处理返回的数据流</li>

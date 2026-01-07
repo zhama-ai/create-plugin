@@ -115,7 +115,7 @@ a.click();
 
 ```typescript
 // 通过 workflowId 调用（SDK 自动从 n8n 获取 workflow 配置）
-const stream = pluginSDK.agent.callByWorkflowId({
+const stream = pluginSDK.agent.callById({
   workflowId: 'your-workflow-id',  // 从 n8n 获取
   sessionId: 'session-123',        // 可选，会话 ID
   params: {                        // 传递给 Agent 的参数
@@ -145,7 +145,7 @@ for await (const chunk of stream) {
 #### 完整响应（等待全部完成）
 
 ```typescript
-const result = await pluginSDK.agent.collectByWorkflowId({
+const result = await pluginSDK.agent.invoke({
   workflowId: 'your-workflow-id',
   params: { message: '分析这段文本' },
 });
