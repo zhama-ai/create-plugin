@@ -264,7 +264,7 @@ program
       // Update package.json
       const pkgPath = path.join(targetDir, 'package.json');
       const pkg = (await fs.readJSON(pkgPath)) as Record<string, any>;
-      pkg.name = `@tego/${projectName}`;
+      pkg.name = projectName;
       if (description) pkg.description = description;
       if (author) pkg.author = author;
 

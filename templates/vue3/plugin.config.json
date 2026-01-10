@@ -16,7 +16,7 @@
   "tags": ["custom"],
   "entry": {
     "type": "miniapp",
-    "frontend": "dist/index.html"
+    "frontend": "index.html"
   },
   "backend": {
     "url": "http://localhost:4100"

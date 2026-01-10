@@ -17,7 +17,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@zhama/plugin-sdk": "^2.3.0",
+    "@zhama/plugin-sdk": "^2.4.1",
     "vue": "^3.5.17"
   },
   "devDependencies": {

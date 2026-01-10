@@ -17,7 +17,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@zhama/plugin-sdk": "^2.3.0",
+    "@zhama/plugin-sdk": "^2.4.1",
     "lucide-react": "^0.469.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
