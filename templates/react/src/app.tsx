@@ -1,5 +1,5 @@
 /**
- * {{displayName}} Plugin Main App
+ * __DISPLAY_NAME__ Plugin Main App
  */
 
 import { AgentDemo } from './components/agent-demo';
@@ -7,7 +7,7 @@ import { usePluginConfig } from './hooks/use-plugin-config';
 import { pluginSDK } from './main';
 
 export function App() {
-  console.log('[App] Rendering {{displayName}} plugin app...');
+  console.log('[App] Rendering __DISPLAY_NAME__ plugin app...');
 
   // 获取插件配置
   const { config, isLoading, error } = usePluginConfig();

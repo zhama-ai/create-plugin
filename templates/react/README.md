@@ -1,4 +1,4 @@
-# {{displayName}}
+# __DISPLAY_NAME__
 
 基于 React + TypeScript 的 Tego OS 插件。
 

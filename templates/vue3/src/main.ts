@@ -1,5 +1,5 @@
 /**
- * {{displayName}} Plugin Main Entry
+ * __DISPLAY_NAME__ Plugin Main Entry
  */
 
 import { PluginSDK } from '@zhama/plugin-sdk';
@@ -23,10 +23,10 @@ function initAndMount() {
     // - token/user: 自动从 localStorage 读取（与 dashboard 共用）
     // - 其他配置: 从服务端注入的 window.__TEGO_PLUGIN__ 读取
     pluginSDK = PluginSDK.init({
-      pluginId: '{{pluginId}}',
+      pluginId: '__PLUGIN_ID__',
     });
 
-    console.log('[{{displayName}} Plugin] SDK initialized:', {
+    console.log('[__DISPLAY_NAME__ Plugin] SDK initialized:', {
       pluginId: pluginSDK.getPluginId(),
       userId: pluginSDK.getUserId(),
       theme: pluginSDK.getTheme(),
@@ -42,9 +42,9 @@ function initAndMount() {
     const app = createApp(App);
     app.mount(appElement);
 
-    console.log('[{{displayName}} Plugin] App mounted successfully');
+    console.log('[__DISPLAY_NAME__ Plugin] App mounted successfully');
   } catch (error) {
-    console.error('[{{displayName}} Plugin] Failed to initialize:', error);
+    console.error('[__DISPLAY_NAME__ Plugin] Failed to initialize:', error);
 
     // 显示错误信息
     const appElement = document.getElementById('app');

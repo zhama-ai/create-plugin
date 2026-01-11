@@ -271,25 +271,18 @@ program
       await fs.writeJSON(pkgPath, pkg, { spaces: 2 });
 
       // Replace template placeholders
+      // 使用 __XXX__ 格式避免与 Vue/React 模板语法冲突
       spinner.text = 'Replacing template placeholders...';
-      await replaceInFiles(targetDir, /\{\{pluginId\}\}/g, projectName);
 
-      // Replace displayName placeholders (both formats for compatibility)
-      if (displayNameZh) {
-        await replaceInFiles(targetDir, /\{\{displayName\}\}/g, displayNameZh);
-        // Vue 模板使用 __DISPLAY_NAME__ 避免与 Vue 插值语法冲突
-        await replaceInFiles(targetDir, /__DISPLAY_NAME__/g, displayNameZh);
-      }
+      // 使用 fallback 确保不留残留的模板变量
+      const displayName = displayNameZh || displayNameEn || projectName;
+      const finalDescription = description || 'A Tego OS plugin';
+      const finalAuthor = author || '';
 
-      // Replace description placeholders
-      if (description) {
-        await replaceInFiles(targetDir, /\{\{description\}\}/g, description);
-      }
-
-      // Replace author placeholders
-      if (author) {
-        await replaceInFiles(targetDir, /\{\{author\}\}/g, author);
-      }
+      await replaceInFiles(targetDir, /__PLUGIN_ID__/g, projectName);
+      await replaceInFiles(targetDir, /__DISPLAY_NAME__/g, displayName);
+      await replaceInFiles(targetDir, /__DESCRIPTION__/g, finalDescription);
+      await replaceInFiles(targetDir, /__AUTHOR__/g, finalAuthor);
 
       // 更新 plugin.config.json
       spinner.text = 'Updating plugin.config.json...';
