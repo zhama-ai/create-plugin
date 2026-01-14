@@ -53,7 +53,7 @@ export default defineConfig({
     strictPort: true,
     // 代理配置（仅独立开发时需要，通过 dashboard 访问时由 dashboard 处理）
     // proxy: {
-    //   '/api/v1/tego-engine': {
+    //   '/engine': {
     //     target: 'http://localhost:5678',
     //     changeOrigin: true,
     //     rewrite: (path) => path.replace(/^\/api\/v1\/tego-engine/, ''),
