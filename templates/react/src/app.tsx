@@ -40,8 +40,7 @@ export function App() {
             </div>
             <div className="px-6 py-4">
               <p className="text-gray-600">
-                这是一个基于 Tego OS
-                的插件模板。您可以在此基础上开发自己的插件功能。
+                这是一个插件模板。您可以在此基础上开发自己的插件功能。
               </p>
             </div>
           </div>
