@@ -20,7 +20,6 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "baseUrl": ".",
     "outDir": "./dist",
     "types": ["node"],
     "paths": {

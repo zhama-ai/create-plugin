@@ -21,7 +21,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsgo --noEmit",
     "clean": "rm -rf dist",
     "prepublishOnly": "pnpm build"
   },
