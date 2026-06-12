@@ -13,8 +13,8 @@ export default defineConfig({
   // 生成类型声明文件
   dts: true,
 
-  // 生成 source map
-  sourcemap: true,
+  // 默认不生成 source map；需要调试时用 ENABLE_SOURCEMAP=true 开启。
+  sourcemap: process.env.ENABLE_SOURCEMAP === 'true',
 
   // 清理输出目录
   clean: true,
